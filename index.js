@@ -35,3 +35,7 @@ Term_diff.prototype.update = function(text) {
 	this.trigger('update',diff);
 };
 
+
+Term_diff.prototype.text = function() {
+	return this.textArray.join('');
+};
