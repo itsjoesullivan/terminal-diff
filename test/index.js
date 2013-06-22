@@ -1,9 +1,8 @@
-var expect = require('chai').expect;
 var Term_diff = require('../index');
 
 describe("Term_diff", function() {
 	it('exists', function() {
-		expect(typeof Term_diff).equal('function');
+		(typeof Term_diff).should.equal('function');
 	});
 
 	var td;
@@ -15,7 +14,7 @@ describe("Term_diff", function() {
 	describe('text', function() {
 		it('returns the current text', function() {
 			td.textArray = ['asdf'];
-			expect(td.text()).equal('asdf');
+			td.text().should.equal('asdf');
 		});
 	});
 			
@@ -23,7 +22,7 @@ describe("Term_diff", function() {
 	describe('reset', function() {
 		it('sets the textArray', function() {
 			td.reset('asdf');
-			expect(td.text()).equal('asdf');
+			td.text().should.equal('asdf');
 		});
 		it('triggers reset event', function() {
 			var reset = false;
@@ -31,7 +30,7 @@ describe("Term_diff", function() {
 				reset = true;	
 			});
 			td.reset('hi');
-			expect(reset).equal(true);
+			reset.should.equal(true);
 		});	
 		it('reset event carries text as arg', function() {
 			var newText = '';
@@ -39,13 +38,13 @@ describe("Term_diff", function() {
 				newText = text;
 			});
 			td.reset('hi');
-			expect(newText).equal('hi');
+			newText.should.equal('hi');
 		});	
 	});	
 	describe('update', function() {
 		it('updates the text', function() {
 			td.update('hello');
-			expect(td.text()).equal('hello');
+			td.text().should.equal('hello');
 		});
 		it('triggers an update event', function() {
 			var update = false;
@@ -53,7 +52,7 @@ describe("Term_diff", function() {
 				update = true;	
 			});
 			td.update('hello');
-			expect(update).equal(true);
+			update.should.equal(true);
 		});
 		it('update event carries an array with the diff', function() {
 			var diff;
@@ -61,7 +60,7 @@ describe("Term_diff", function() {
 				diff = newDiff;
 			});
 			td.update('hello');
-			expect(diff[0].line).equal(0);
+			diff[0].line.should.equal(0);
 		});
 
 	});
