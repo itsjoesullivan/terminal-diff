@@ -2,7 +2,7 @@ var Term_diff = module.exports = function() {
 	this.textArray = [];
 };
 
-var Event = require('event');
+var Event = require('./lib/Event');
 
 var _ = require('underscore');
 
@@ -21,7 +21,7 @@ Term_diff.prototype.update = function(text) {
 	_(text).each(function(line, index) {
 
 		//If the line hasn't changed, ignore.
-		if(index in this.textArray && this.textArray[index] === line) continue;
+		if(index in this.textArray && this.textArray[index] === line) return;
 
 		//Otherwise, record the new line
 		this.textArray[index] = line;
