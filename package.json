@@ -1,0 +1,28 @@
+{
+  "name": "terminal-diff",
+  "version": "1.0.0",
+  "description": "A tool for keeping track of what is on your terminal screen",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "underscore": "~1.4.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha -r should"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itsjoesullivan/terminal-diff.git"
+  },
+  "keywords": [
+    "terminal",
+    "diff"
+  ],
+  "author": "Joe Sullivan",
+  "license": "BSD",
+  "readmeFilename": "readme.md",
+  "gitHead": "cd4d1600d18b52d0ef12fd418693add241fb1544"
+}
